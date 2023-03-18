@@ -1,0 +1,23 @@
+button {
+    border-color: transparent;
+    background-color: transparent ;
+    font-weight: 500;
+}
+
+button:hover {
+    color: #10BBB3;
+}
+
+i {
+    padding: .3rem;
+    color: #10BBB3 ;
+    background-color: #F5F8FA;
+    border-radius: 50%;
+    transition: transform .75s;
+}
+
+button:hover i {
+    background-color: #10BBB3 ;
+    color: #F5F8FA;
+    transform: rotate(360deg);
+}
