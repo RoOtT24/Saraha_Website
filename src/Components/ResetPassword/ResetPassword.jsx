@@ -13,7 +13,9 @@ export const ResetPassword = () => {
     const submitForm = async (e)=>{
         e.preventDefault()
         const email = localStorage.getItem('email')
+        console.log("input => ",{...input,email})
         const {data} = await axios.patch('https://lazy-blue-sockeye-gear.cyclic.app/api/v1/auth/forgetPassword',{...input,email})
+        console.log("data => ",data)
         if(data.message === 'success'){
             toast.success('Sign In With The New Password')
             localStorage.removeItem('email')
@@ -52,7 +54,7 @@ export const ResetPassword = () => {
           className="form-control my-4 "
           placeholder="Enter Your New Password"
           type="password"
-          name={input.newPassword}
+          name='newPassword'
         />
       <input type="submit" className='btn btn-primary' />
       </form>

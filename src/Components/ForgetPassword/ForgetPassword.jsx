@@ -47,7 +47,7 @@ const ForgetPassword = () => {
             name="email"
             value={email}
           />
-         <input type="submit" className='btn btn-primary' />
+         <input type="submit" className='btn btn-primary mt-4' />
         </form>
       </div>
     </div>

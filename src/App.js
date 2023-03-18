@@ -13,6 +13,7 @@ import cookie from "react-cookies";
 import MyProfile from "./Components/MyProfile/MyProfile";
 import ForgetPassword from "./Components/ForgetPassword/ForgetPassword";
 import { ResetPassword } from "./Components/ResetPassword/ResetPassword";
+import { ProtectedRoutes } from "./Components/ProtectedRoutes/ProtectedRoutes";
 
 function App() {
   const [users, setUsers] = useState([]);
@@ -23,7 +24,7 @@ function App() {
     const { data } = await axios.get(
       "https://lazy-blue-sockeye-gear.cyclic.app/api/v1/auth/getAllUsers"
     );
-    await setUsers(data);
+    setUsers(data);
     setTimeout(() => {
       setLoading(false);
     }, 500);
@@ -39,23 +40,22 @@ function App() {
       {loading ? (
         <Loader />
       ) : (
+
         <Routes>
-          {user ? (
-            <>
+              <Route element={<ProtectedRoutes/>}>
               <Route
                 path="/user/:id"
                 element={<UserProfile users={users} />}
               ></Route>
-              <Route path="/" element={<Home />}></Route>
+              <Route path="/" element={<Home users={users}/>}></Route>
               <Route path="/home" element={<Home users={users} />}></Route>
               <Route
                 path="/messages"
                 element={<MyProfile token={user} users={users} />}
               ></Route>
-            </>
-          ) : (
-            <>
-              <Route path="/" element={<Login logUser={setUser} />}></Route>
+              </Route>
+          
+             
               <Route path="/forgetpassword" element={<ForgetPassword />}></Route>
               <Route
                 path="/login"
@@ -63,8 +63,8 @@ function App() {
               ></Route>
               <Route path="/register" element={<Register />}></Route>
               <Route path="/resetcode" element={<ResetPassword />}></Route>
-            </>
-          )}
+            
+          
 
           <Route path="/*" element={<PageNotFound />}></Route>
         </Routes>
