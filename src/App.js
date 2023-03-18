@@ -12,6 +12,7 @@ import UserProfile from "./Components/userProfile/UserProfile";
 import cookie from "react-cookies";
 import MyProfile from "./Components/MyProfile/MyProfile";
 import ForgetPassword from "./Components/ForgetPassword/ForgetPassword";
+import { ResetPassword } from "./Components/ResetPassword/ResetPassword";
 
 function App() {
   const [users, setUsers] = useState([]);
@@ -61,6 +62,7 @@ function App() {
                 element={<Login logUser={setUser} />}
               ></Route>
               <Route path="/register" element={<Register />}></Route>
+              <Route path="/resetcode" element={<ResetPassword />}></Route>
             </>
           )}
 
