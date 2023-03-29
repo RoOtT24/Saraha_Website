@@ -4,7 +4,7 @@ import styles from './Footer.module.css'
 
 const Footer = () => {
   return (
-   <div className={styles.footer-dark}>
+   <div className={styles.footerDark}>
   <footer>
     <div className={styles.container}>
       <div className="row">
