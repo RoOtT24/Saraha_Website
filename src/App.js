@@ -14,6 +14,7 @@ import MyProfile from "./Components/MyProfile/MyProfile";
 import ForgetPassword from "./Components/ForgetPassword/ForgetPassword";
 import { ResetPassword } from "./Components/ResetPassword/ResetPassword";
 import { ProtectedRoutes } from "./Components/ProtectedRoutes/ProtectedRoutes";
+import Footer from "./Components/Footer/Footer";
 
 function App() {
   const [users, setUsers] = useState([]);
@@ -69,6 +70,7 @@ function App() {
           <Route path="/*" element={<PageNotFound />}></Route>
         </Routes>
       )}
+      <Footer/>
     </div>
   );
 }

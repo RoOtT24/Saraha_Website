@@ -33,7 +33,6 @@ const Login = ({logUser}) => {
         logUser(data.token)
         const expires = new Date()
         const futureDay = expires.getDate()+1;
-        
         expires.setDate(futureDay)
         cookie.save('token' , data.token, {expires});
         toast.success('Welcome :D')

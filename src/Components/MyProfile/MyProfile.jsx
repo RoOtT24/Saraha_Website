@@ -46,7 +46,7 @@ export default function MyProfile({ token, users }) {
               data-toggle="modal"
               data-target="#share"
               className="btn btn-default-outline share "
-              onClick={(e) => shareProfile(e, `http://localhost:3000/user/${profileUser._id}`)} // link needs to be updated
+              onClick={(e) => shareProfile(e, `https://sarahaapp.netlify.app/user/${profileUser._id}`)} // link needs to be updated
             >
               <i className="fas fa-share-alt" /> Share Profile
             </button>

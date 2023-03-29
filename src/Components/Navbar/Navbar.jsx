@@ -5,7 +5,7 @@ import cookie from 'react-cookies'
 const Navbar = ({user, setUser}) => {
   const logout = ()=>{
     setUser(null)
-    cookie.remove('token')
+    cookie.remove('session_id')
   }
   return (
     <nav className="navbar navbar-expand-lg bg-custom navbar-dark bg-dark">
@@ -29,7 +29,8 @@ const Navbar = ({user, setUser}) => {
             <a className="nav-link" href="#" onClick={logout}>Logout</a>
           </li>
           </>
-          :<>
+          :
+          <>
           <li className="nav-item">
             <Link className="nav-link" to="/register">Register</Link>
           </li>
